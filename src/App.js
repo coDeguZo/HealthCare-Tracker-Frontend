@@ -1,18 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grid } from 'semantic-ui-react'
+import Nav from './components/Nav'
 import Country from './components/Country'
-import CountryContainer from './containers/CountryContainer'
+import CountryContainer from './ConfirmedCases/CountryContainer'
+import WorldContainer from './ConfirmedCases/WorldContainer'
+import TimeLastUpdated from './components/TimeLastUpdated'
+import WorldWithNumberCases from './WorldMap/WorldWithNumberCases'
 
 class App extends React.Component {
   
   render(){
-  return (
-    <div className="App">
-      <h1> Coronavirus Tracker</h1>
-      <CountryContainer />
-    </div>
-  );
+    return (
+      <div className="App">
+        <Nav />
+        <br/>
+        <Grid>
+
+          {/* Grid 1 Coronavirus Map by Countries */}
+
+          <Grid.Column width={3}>
+          <WorldContainer />
+          <br />
+          <CountryContainer />
+          <br />
+          <TimeLastUpdated />
+          </Grid.Column>
+
+          {/* Grid 2 Map */}
+
+          <Grid.Column width={7}>
+            <WorldWithNumberCases />
+          </Grid.Column>
+
+          {/* Grid 3 */}
+
+          <Grid.Column width={2}>
+            <h1>Hello World 2</h1>
+          </Grid.Column>
+        </Grid>
+      </div>
+    )
   }
 }
 

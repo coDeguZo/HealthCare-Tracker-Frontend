@@ -9,10 +9,20 @@ const countryReducer = (state = [], action) => {
     }
 }
 
+const worldReducer = (state = [], action) => {
+    switch(action.type){
+        case "FETCHED_WORLD":
+            return action.payload
+        default: 
+            return state
+    }
+}
+
 
 
 const rootReducer = combineReducers({
-    countries: countryReducer
+    countries: countryReducer,
+    world: worldReducer
 });
 
 

@@ -12,9 +12,23 @@ function fetchedCountries(countries){
     return {type: "FETCHED_COUNTRIES", payload: countries}
 }
 
+function fetchingWorld(){
+    return (dispatch) => {
+        fetch("https://coronavirus-19-api.herokuapp.com/countries/world")
+        .then(resp => resp.json())
+        .then(world => {
+            dispatch(fetchedWorld(world))
+        })
+    }
+}
+
+function fetchedWorld(world){
+    return {type: "FETCHED_WORLD", payload: world}
+}
 
 
 
 
 
-export { fetchingCountries }
+
+export { fetchingCountries, fetchingWorld }

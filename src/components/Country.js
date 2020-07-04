@@ -1,9 +1,10 @@
 import React from 'react'
 
 function Country(props) {
+    const {country, cases} = props.country
     return (
         <div>
-            <h1>{props.country.country}</h1>
+            <p><span><strong>{cases}</strong></span> {country}</p>
         </div>
     )
 }
