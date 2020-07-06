@@ -7,6 +7,7 @@ import TimeLastUpdated from './components/TimeLastUpdated'
 import MapChartContainer from './WorldMap/MapChartContainer'
 import DeathReportContainer from './CovidHealth/DeathReportContainer'
 import RecoveryReportContainer from './CovidHealth/RecoveryReportContainer'
+import GraphsContainer from './Graphs/GraphsContainer'
 
 class App extends React.Component {
   
@@ -54,7 +55,7 @@ class App extends React.Component {
           <Grid.Column className="grid-five">
             <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
             <div className="inside-grid-five">
-              <h1>Graph Data Will Go Here</h1>
+              <GraphsContainer />
             </div>
           </Grid.Column>
           
