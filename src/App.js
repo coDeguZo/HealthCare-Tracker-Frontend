@@ -5,11 +5,12 @@ import Country from './components/Country'
 import CountryContainer from './ConfirmedCases/CountryContainer'
 import WorldContainer from './ConfirmedCases/WorldContainer'
 import TimeLastUpdated from './components/TimeLastUpdated'
-import WorldWithNumberCases from './WorldMap/WorldWithNumberCases'
+import MapChartContainer from './WorldMap/MapChartContainer';
 
 class App extends React.Component {
   
   render(){
+
     return (
       <div className="App">
         <Nav />
@@ -29,7 +30,7 @@ class App extends React.Component {
           {/* Grid 2 Map */}
 
           <Grid.Column width={7}>
-            <WorldWithNumberCases />
+            <MapChartContainer />
           </Grid.Column>
 
           {/* Grid 3 */}
