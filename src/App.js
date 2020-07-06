@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react'
 import Nav from './components/Nav'
-import Country from './components/Country'
 import CountryContainer from './ConfirmedCases/CountryContainer'
 import WorldContainer from './ConfirmedCases/WorldContainer'
 import TimeLastUpdated from './components/TimeLastUpdated'
@@ -35,7 +34,7 @@ class App extends React.Component {
 
           {/* Grid 3 */}
 
-          <Grid.Column width={2}>
+          <Grid.Column width={1} className="grid-three">
             <h1>Hello World 2</h1>
           </Grid.Column>
         </Grid>

@@ -92,3 +92,15 @@ code {
   /* font-size: 30px;  */
   text-align: center;
 }
+
+.world-map{
+  /* margin-right: 10px; */
+  height: 600px;
+  text-align: center; 
+  border-style: groove;
+  outline-color: #DCDCDC;
+}
+
+.grid-three{
+  margin-left: 220px;
+}
