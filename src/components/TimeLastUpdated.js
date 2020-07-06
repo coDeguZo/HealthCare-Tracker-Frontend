@@ -8,6 +8,7 @@ const TimeLastUpdated = () => {
     return(
         <div className="wrapper-date-time-left">
             <div className="date-time-left">
+                <bbr />
                 <h5>{withoutEnd}</h5>
             </div>
         </div>

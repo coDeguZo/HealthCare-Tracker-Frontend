@@ -14,10 +14,11 @@ const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
 const colorScale = scaleLinear()
-  .domain([1, 100000])
-  .range(["#ffedea", "#ff5233"]);
+  .domain([1, 15])
+  .range(["#ffedea", "#ab0e03"])
+  // .range(["#ffedea", "#ff5233"]);
 
-const MapChart = () => {
+const NumberOfCases = () => {
   const [data, setData] = useState([]);
 
    useEffect(() => {
@@ -25,11 +26,16 @@ const MapChart = () => {
     .then(resp => resp.json())
     .then(data => {
       for(let i = 0; i < data.length; i++){
-        // data[i].cases = data[i].cases * 0.01
-        // if(data[i].cases){
-          debugger
-        // }
+        data[i].cases = Math.log(data[i].cases)
       }
+      // debugger
+      data[1].country = "United States of America"
+      data[8].country = "United Kingdom"
+      data[30].country = "United Arab Emirates"
+      data[62].country = "South Korea"
+      data[66].country = "Côte d'Ivoire"
+      data[76].country = "Dem. Rep. Congo"
+      data[94].country = "Central African Rep."
       setData(data)})
   }, []);
 
@@ -46,9 +52,10 @@ const MapChart = () => {
       {data.length > 0 && (
         <ZoomableGroup zoom={1}>
         <Geographies geography={geoUrl}>
-          {({ geographies }) =>
+          {({ geographies }) => 
+            // debugger
             geographies.map(geo => {
-              const d = data.find(s => s.country === geo.properties.NAME || s.country === geo.properties.ISO_A3);
+              const d = data.find(s => s.country === geo.properties.NAME || s.country === geo.properties.ISO_A3 || s.country === geo.properties.NAME_LONG || s.country === geo.properties.FORMAL_EN);
               return (
                 <Geography
                   key={geo.rsmKey}
@@ -65,4 +72,4 @@ const MapChart = () => {
   );
 };
 
-export default MapChart;
+export default NumberOfCases;

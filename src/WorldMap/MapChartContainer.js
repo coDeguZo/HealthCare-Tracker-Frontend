@@ -1,10 +1,10 @@
 import React from "react";
-import MapChart from "./MapChart";
+import NumberOfCases from "./NumberOfCases";
 
 const MapChartContainer = (props) => {
   return (
     <div>
-      <MapChart />
+      <NumberOfCases />
     </div>
   );
 }

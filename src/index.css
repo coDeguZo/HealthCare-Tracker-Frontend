@@ -64,6 +64,16 @@ code {
   outline-color: #DCDCDC;
 }
 
+.right-country-container-div { 
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  text-align: center; 
+  height: 500px;
+  width: 200px;
+  border-style: groove;
+  /* border-color: #FFFFFF; */
+}
+
 /* .date-time-left {
   margin-left: 15px;
   width: 170px;
@@ -101,6 +111,42 @@ code {
   outline-color: #DCDCDC;
 }
 
+.grid-two{
+  margin-left: -50px;
+}
+
 .grid-three{
-  margin-left: 220px;
+  margin-left: 150px;
+}
+
+.grid-four{
+  margin-left: -70px;
+}
+
+.world-map-info {
+  /* margin-left: 15px; */
+}
+
+.world-map-info-container-div { 
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  text-align: center; 
+  height: 134px;
+  width: 798px;
+  border-style: groove;
+  /* border-color: #FFFFFF; */
+}
+
+.grid-five{
+  margin-left: -282px;
+}
+
+.inside-grid-five {
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  text-align: center; 
+  height: 225px;
+  width: 404px;
+  border-style: groove;
+  /* border-color: #FFFFFF; */
 }
