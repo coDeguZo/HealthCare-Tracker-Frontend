@@ -15,8 +15,8 @@ const geoUrl =
 
 const colorScale = scaleLinear()
   .domain([1, 15])
-  .range(["#ffedea", "#ab0e03"])
-  // .range(["#ffedea", "#ff5233"]);
+  // .range(["#ffedea", "#ab0e03"])
+  .range(["#ffedea", "#DC143C "]);
 
 const NumberOfCases = () => {
   const [data, setData] = useState([]);
@@ -25,6 +25,7 @@ const NumberOfCases = () => {
     fetch("https://coronavirus-19-api.herokuapp.com/countries")
     .then(resp => resp.json())
     .then(data => {
+      // debugger
       for(let i = 0; i < data.length; i++){
         data[i].cases = Math.log(data[i].cases)
       }
@@ -32,7 +33,8 @@ const NumberOfCases = () => {
       data[1].country = "United States of America"
       data[8].country = "United Kingdom"
       data[30].country = "United Arab Emirates"
-      data[62].country = "South Korea"
+      // data[63].country = "Morocco"
+      data[63].country = "South Korea"
       data[66].country = "Côte d'Ivoire"
       data[76].country = "Dem. Rep. Congo"
       data[94].country = "Central African Rep."

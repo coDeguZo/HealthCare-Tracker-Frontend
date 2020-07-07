@@ -26,9 +26,4 @@ function fetchedWorld(world){
     return {type: "FETCHED_WORLD", payload: world}
 }
 
-
-
-
-
-
 export { fetchingCountries, fetchingWorld }

@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react' 
+import {Route} from 'react-router-dom'
 import { Grid, GridColumn } from 'semantic-ui-react'
 import Nav from './components/Nav'
+import Home from './components/Home'
+import About from './components/About'
 import CountryContainer from './ConfirmedCases/CountryContainer'
 import WorldContainer from './ConfirmedCases/WorldContainer'
 import TimeLastUpdated from './components/TimeLastUpdated'
@@ -17,6 +20,9 @@ class App extends React.Component {
       <div className="App">
         <Nav />
         <br/>
+        <Route exact path="/" render={() => <Home />}/>
+        <Route exact path="/about" render={() => <About />}/>
+        <Route exact path="/coronavirus" render={() => 
         <Grid>
 
           {/* Grid 1 Coronavirus Map by Countries */}
@@ -60,6 +66,7 @@ class App extends React.Component {
           </Grid.Column>
           
         </Grid>
+        }/>
       </div>
     )
   }

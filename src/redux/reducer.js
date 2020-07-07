@@ -18,8 +18,6 @@ const worldReducer = (state = [], action) => {
     }
 }
 
-
-
 const rootReducer = combineReducers({
     countries: countryReducer,
     world: worldReducer
