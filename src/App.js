@@ -11,6 +11,7 @@ import MapChartContainer from './WorldMap/MapChartContainer'
 import DeathReportContainer from './CovidHealth/DeathReportContainer'
 import RecoveryReportContainer from './CovidHealth/RecoveryReportContainer'
 import GraphsContainer from './Graphs/GraphsContainer'
+import CountriesDataContainer from './CountriesData/CountriesDataContainer'
 
 class App extends React.Component {
   
@@ -23,6 +24,7 @@ class App extends React.Component {
         <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/about" render={() => <About />}/>
         <Route exact path="/coronavirus" render={() => 
+        <div className="coronavirus-container">
         <Grid>
 
           {/* Grid 1 Coronavirus Map by Countries */}
@@ -66,7 +68,10 @@ class App extends React.Component {
           </Grid.Column>
           
         </Grid>
+        <CountriesDataContainer />
+        </div>
         }/>
+
       </div>
     )
   }

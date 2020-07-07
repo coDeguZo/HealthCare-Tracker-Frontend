@@ -33,7 +33,7 @@ const NumberOfCases = () => {
       data[1].country = "United States of America"
       data[8].country = "United Kingdom"
       data[30].country = "United Arab Emirates"
-      // data[63].country = "Morocco"
+      data[79].country = "Macedonia"
       data[63].country = "South Korea"
       data[66].country = "Côte d'Ivoire"
       data[76].country = "Dem. Rep. Congo"

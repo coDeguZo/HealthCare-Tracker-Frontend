@@ -9,7 +9,8 @@ const TimeLastUpdated = () => {
         <div className="wrapper-date-time-left">
             <div className="date-time-left">
                 <bbr />
-                <h5>{withoutEnd}</h5>
+                {/* <h4>Last Updated at(M/D/YYYY)</h4> */}
+                <h5 style={{color: "white"}}>{withoutEnd}</h5>
             </div>
         </div>
     )

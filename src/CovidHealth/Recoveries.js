@@ -4,7 +4,7 @@ function Recoveries(props) {
     const {recovered, country} = props.country
     return (
         <div>
-            <p><span><strong>{recovered === null ? "No Data" : recovered}</strong></span> {country}</p>
+            <p style={{color: "white"}}><span style={{color: "green"}}><strong>{recovered === null ? "No Data" : recovered}</strong></span> {country}</p>
         </div>
     )
 }

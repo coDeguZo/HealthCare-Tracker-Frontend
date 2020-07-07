@@ -14,7 +14,7 @@ class CountryContainer extends React.Component{
         return (
             <div className="ConfirmedCases-div">
                 <div className="left-country-container-div">
-                    <h4>Confirmed Cases by Country/Region/Territory</h4>
+                    <h4 style={{color: "white"}}>Confirmed Cases by Country/Region/Territory</h4>
                     {this.props.countries.map(country => {
                     return country.country === "World" ?
                         null

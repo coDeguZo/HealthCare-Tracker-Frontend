@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.coronavirus-container{
+  background-color: #1a1a1a;
+}
+
 /* Nav Bar Container Info */
 .topnav {
   overflow: hidden;
@@ -74,10 +78,25 @@ code {
   /* border-color: #FFFFFF; */
 }
 
-/* .date-time-left {
+.country-data-div{
   margin-left: 15px;
-  width: 170px;
-} */
+  padding-top: 10px;
+}
+
+.country-container-div{
+  padding-left: 180px;
+  overflow-x: hidden; 
+  overflow-y: auto; 
+  text-align: center; 
+  height: 500px;
+  width: 100%;
+  border-style: groove;
+}
+
+.country-container-labels-div{
+  /* padding-bottom: -40px; */
+  margin-top: 10px;
+}
 
 .date-time-left{
   margin-left: 15px;
@@ -149,4 +168,8 @@ code {
   width: 404px;
   border-style: groove;
   /* border-color: #FFFFFF; */
+}
+
+.ui.modal.transition.visible.active{
+  width: 80%
 }

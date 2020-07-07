@@ -5,8 +5,8 @@ const World = (props) => {
     return (
         <div>
             <div className="left-world-container" >
-                <h3>Total Confirmed</h3>
-                <h2>{cases}</h2>
+                <h3 style={{color: "white"}}>Total Confirmed</h3>
+                <h2 style={{color: "red"}}>{cases}</h2>
             </div>
         </div>
     )

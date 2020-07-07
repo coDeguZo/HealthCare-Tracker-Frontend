@@ -216,14 +216,14 @@ class Graph extends Component {
     render(){
      return (
      <div>
-    <h1>{this.state.phrase.title}</h1>
+    <h1 style={{color: "white"}}>{this.state.phrase.title}</h1>
      <div className="infoData">
          <div>
             </div><div>
-            {this.state.phrase.country}
+            <span style={{color: "white"}}> {this.state.phrase.country}</span>
             <input className="infoChild" placeholder={'Type a country'} onChange={(e) => this.drawChartJS(this.state.casesList, e.target.value)} ></input>
-            <input type="button" className="infoChild" onClick={(e) => this.getTimeline(this.state.casesList, e.target.value)} value={'Chronological'} ></input>
-            </div><div>Order by
+            {/* <input type="button" className="infoChild" onClick={(e) => this.getTimeline(this.state.casesList, e.target.value)} value={'Chronological'} ></input> */}
+            </div><div><span style={{color: "white"}}>Order by</span>
             <select className="infoChild" onChange={(e)=>this.drawChartJS(this.state.casesList,"",e.target.value)}>
                 <option value="cases">{this.state.phrase.totalCases}</option>
                 <option value="deaths">{this.state.phrase.totalDeaths}</option>

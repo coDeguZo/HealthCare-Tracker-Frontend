@@ -4,7 +4,7 @@ function Death(props) {
     const {deaths, country} = props.country
     return (
         <div>
-            <p><span><strong>{deaths}</strong></span> {country}</p>
+            <p style={{color: "white"}}><span style={{color: "white"}}><strong>{deaths}</strong></span> {country}</p>
         </div>
     )
 }

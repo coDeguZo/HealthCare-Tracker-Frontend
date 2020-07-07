@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchingCountries} from '../redux/actions'
-import Deaths from '../components/Deaths'
+import Deaths from './Deaths'
 
 
 class DeathReportContainer extends React.Component {
@@ -14,7 +14,7 @@ class DeathReportContainer extends React.Component {
     return (
         <div className="ConfirmedCases-div">
                 <div className="right-country-container-div">
-                    <h4>Global Deaths</h4>
+                    <h4 style={{color: "white"}}>Global Deaths</h4>
                     {this.props.countries.map(country => {
                     return country.country === "World" ?
                         null
