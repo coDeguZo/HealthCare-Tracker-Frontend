@@ -69,6 +69,7 @@ code {
 }
 
 .right-country-container-div { 
+  background-color: #404040;
   overflow-x: hidden; 
   overflow-y: auto; 
   text-align: center; 
@@ -142,9 +143,9 @@ code {
   margin-left: -70px;
 }
 
-.world-map-info {
-  /* margin-left: 15px; */
-}
+/* .world-map-info {
+  margin-left: 15px;
+} */
 
 .world-map-info-container-div { 
   overflow-x: hidden; 
@@ -173,3 +174,9 @@ code {
 .ui.modal.transition.visible.active{
   width: 80%
 }
+
+/* .gray-background {
+  background-color: 'white';
+  height: 100%;
+  width: 100%;
+} */

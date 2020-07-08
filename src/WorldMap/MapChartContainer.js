@@ -4,7 +4,7 @@ import NumberOfCases from "./NumberOfCases";
 const MapChartContainer = (props) => {
   return (
     <div>
-      <NumberOfCases />
+        <NumberOfCases />
     </div>
   );
 }

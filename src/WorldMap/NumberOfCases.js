@@ -27,17 +27,41 @@ const NumberOfCases = () => {
     .then(data => {
       // debugger
       for(let i = 0; i < data.length; i++){
+        if(data[i] === "USA"){
+          data[i].country = "United States of America"
+        }
+        if(data[i] === "UK"){
+          data[i].country = "United Kingdom"
+        }
+        if(data[i] === "UAE"){
+          data[i].country = "United Arab Emirates"
+        }
+        if(data[i] === "S. Korea"){
+          data[i].country = "South Korea"
+        }
+        if(data[i] === "Ivory Coast"){
+          data[i].country = "Côte d'Ivoire"
+        }
+        if(data[i] === "DCR"){
+          data[i].country = "Dem. Rep. Congo"
+        }
+        if(data[i] === "North Macedonia"){
+          data[i].country = "Macedonia"
+        }
+        if(data[i] === "CAR"){
+          data[i].country = "Central African Rep."
+        }
         data[i].cases = Math.log(data[i].cases)
       }
       // debugger
-      data[1].country = "United States of America"
-      data[8].country = "United Kingdom"
-      data[30].country = "United Arab Emirates"
-      data[79].country = "Macedonia"
-      data[63].country = "South Korea"
-      data[66].country = "Côte d'Ivoire"
-      data[76].country = "Dem. Rep. Congo"
-      data[94].country = "Central African Rep."
+      // data[1].country = "United States of America"
+      // data[8].country = "United Kingdom"
+      // data[30].country = "United Arab Emirates"
+      // data[63].country = "South Korea"
+      // data[66].country = "Côte d'Ivoire"
+      // data[77].country = "Dem. Rep. Congo"
+      // data[78].country = "Macedonia"
+      // data[94].country = "Central African Rep."
       setData(data)})
   }, []);
 
@@ -55,7 +79,6 @@ const NumberOfCases = () => {
         <ZoomableGroup zoom={1}>
         <Geographies geography={geoUrl}>
           {({ geographies }) => 
-            // debugger
             geographies.map(geo => {
               const d = data.find(s => s.country === geo.properties.NAME || s.country === geo.properties.ISO_A3 || s.country === geo.properties.NAME_LONG || s.country === geo.properties.FORMAL_EN);
               return (

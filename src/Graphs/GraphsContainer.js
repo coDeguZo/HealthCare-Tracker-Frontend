@@ -29,8 +29,6 @@ function GraphsContainer(props) {
                 </Modal.Content>
             </Modal>
             <Graph/>
-            <div>
-            </div>
         </div>
     )
 }
