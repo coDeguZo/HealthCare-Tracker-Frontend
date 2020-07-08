@@ -57,6 +57,7 @@ code {
   height: 500px;
   width: 200px;
   border-style: groove;
+  background-color: #404040;
   /* border-color: #FFFFFF; */
 }
 
@@ -66,6 +67,7 @@ code {
   width: 200px;
   border-style: groove;
   outline-color: #DCDCDC;
+  background-color: #404040;
 }
 
 .right-country-container-div { 
@@ -82,6 +84,7 @@ code {
 .country-data-div{
   margin-left: 15px;
   padding-top: 10px;
+  background-color: #0e1a1f;
 }
 
 .country-container-div{
@@ -106,6 +109,7 @@ code {
   width: 200px;
   border-style: groove;
   outline-color: #DCDCDC;
+  background-color: #404040;
 }
 
 .app-grid-container {
@@ -154,6 +158,7 @@ code {
   height: 134px;
   width: 798px;
   border-style: groove;
+  background-color: #404040
   /* border-color: #FFFFFF; */
 }
 
@@ -168,6 +173,7 @@ code {
   height: 225px;
   width: 404px;
   border-style: groove;
+  background-color: #181818;
   /* border-color: #FFFFFF; */
 }
 
@@ -175,8 +181,6 @@ code {
   width: 80%
 }
 
-/* .gray-background {
-  background-color: 'white';
-  height: 100%;
-  width: 100%;
+/* .map-chart-container-div {
+  background-color: #404040;
 } */

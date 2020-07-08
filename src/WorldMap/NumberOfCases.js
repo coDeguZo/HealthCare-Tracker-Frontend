@@ -27,28 +27,28 @@ const NumberOfCases = () => {
     .then(data => {
       // debugger
       for(let i = 0; i < data.length; i++){
-        if(data[i] === "USA"){
+        if(data[i].country === "USA"){
           data[i].country = "United States of America"
         }
-        if(data[i] === "UK"){
+        if(data[i].country === "UK"){
           data[i].country = "United Kingdom"
         }
-        if(data[i] === "UAE"){
+        if(data[i].country === "UAE"){
           data[i].country = "United Arab Emirates"
         }
-        if(data[i] === "S. Korea"){
+        if(data[i].country === "S. Korea"){
           data[i].country = "South Korea"
         }
-        if(data[i] === "Ivory Coast"){
+        if(data[i].country === "Ivory Coast"){
           data[i].country = "Côte d'Ivoire"
         }
-        if(data[i] === "DCR"){
+        if(data[i].country === "DRC"){
           data[i].country = "Dem. Rep. Congo"
         }
-        if(data[i] === "North Macedonia"){
+        if(data[i].country === "North Macedonia"){
           data[i].country = "Macedonia"
         }
-        if(data[i] === "CAR"){
+        if(data[i].country === "CAR"){
           data[i].country = "Central African Rep."
         }
         data[i].cases = Math.log(data[i].cases)
@@ -66,6 +66,7 @@ const NumberOfCases = () => {
   }, []);
 
   return (
+    <div className="map-chart-div">
     <ComposableMap
       projectionConfig={{
         rotate: [-10, 0, 0],
@@ -94,6 +95,7 @@ const NumberOfCases = () => {
         </ZoomableGroup>
       )}
     </ComposableMap>
+    </div>
   );
 };
 

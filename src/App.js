@@ -40,7 +40,9 @@ class App extends React.Component {
           {/* Grid 2 World Map */}
 
           <Grid.Column width={7} className="grid-two">
+          <div className="map-chart-container-div">
             <MapChartContainer />
+          </div>
             <div className="world-map-info">
                 <div className="world-map-info-container-div">
               <h1>World Map Information will go here!</h1>
