@@ -18,7 +18,17 @@ const worldReducer = (state = [], action) => {
     }
 }
 
+const mapButtonReducer = (state = "Cases", action) => {
+    switch(action.type){
+        case "CLICKED_MAP_BUTTON":
+            return action.payload.target.innerText
+        default:
+            return state
+    }
+}
+
 const rootReducer = combineReducers({
+    currentMapButton: mapButtonReducer,
     countries: countryReducer,
     world: worldReducer
 });

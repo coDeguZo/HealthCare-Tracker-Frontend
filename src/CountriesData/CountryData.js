@@ -2,7 +2,7 @@ import React from 'react'
 import {Grid} from 'semantic-ui-react'
 
 const CountryData = (props) => {
-    console.log(props)
+    // console.log(props)
     return (
         <div>
             <Grid>

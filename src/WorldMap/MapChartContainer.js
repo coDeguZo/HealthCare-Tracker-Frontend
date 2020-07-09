@@ -3,10 +3,10 @@ import NumberOfCases from "./NumberOfCases";
 
 const MapChartContainer = (props) => {
   return (
-    // <div style={{background: "#404040"}}>
-        <NumberOfCases />
-    // </div>
-  );
+    <div>
+      <NumberOfCases />
+    </div>
+  )
 }
 
 export default MapChartContainer

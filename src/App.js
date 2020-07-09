@@ -1,9 +1,10 @@
 import React from 'react' 
 import {Route} from 'react-router-dom'
-import { Grid, GridColumn } from 'semantic-ui-react'
+import { Grid, Segment } from 'semantic-ui-react'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import About from './components/About'
+import Footer from './components/Footer'
 import CountryContainer from './ConfirmedCases/CountryContainer'
 import WorldContainer from './ConfirmedCases/WorldContainer'
 import TimeLastUpdated from './components/TimeLastUpdated'
@@ -12,6 +13,7 @@ import DeathReportContainer from './CovidHealth/DeathReportContainer'
 import RecoveryReportContainer from './CovidHealth/RecoveryReportContainer'
 import GraphsContainer from './Graphs/GraphsContainer'
 import CountriesDataContainer from './CountriesData/CountriesDataContainer'
+import MapChartButtons from './WorldMap/MapChartButtons'
 
 class App extends React.Component {
   
@@ -19,11 +21,13 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Nav />
-        <br/>
-        <Route exact path="/" render={() => <Home />}/>
-        <Route exact path="/about" render={() => <About />}/>
-        <Route exact path="/coronavirus" render={() => 
+        {/* <Nav /> */}
+        <div className="title">
+          <h1 style={{fontSize: "60px", textAlign: "center", color: "red"}}>Coronavirus Tracker</h1>
+        </div>
+        {/* <Route exact path="/" render={() => <Home />}/>
+        <Route exact path="/about" render={() => <About />}/> */}
+        <Route exact path="/" render={() => 
         <div className="coronavirus-container">
         <Grid>
 
@@ -45,7 +49,8 @@ class App extends React.Component {
           </div>
             <div className="world-map-info">
                 <div className="world-map-info-container-div">
-              <h1>World Map Information will go here!</h1>
+              {/* <h1>World Map Information will go here!</h1> */}
+              <MapChartButtons />
             </div>
             </div>
           </Grid.Column>
@@ -71,9 +76,10 @@ class App extends React.Component {
           
         </Grid>
         <CountriesDataContainer />
+        <br />
         </div>
         }/>
-
+        <Footer />
       </div>
     )
   }

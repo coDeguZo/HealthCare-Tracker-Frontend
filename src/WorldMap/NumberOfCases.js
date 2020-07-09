@@ -9,6 +9,7 @@ import {
   Graticule,
   ZoomableGroup
 } from "react-simple-maps";
+import {connect} from 'react-redux'
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -62,9 +63,9 @@ const NumberOfCases = () => {
       // data[77].country = "Dem. Rep. Congo"
       // data[78].country = "Macedonia"
       // data[94].country = "Central African Rep."
+
       setData(data)})
   }, []);
-
   return (
     <div className="map-chart-div">
     <ComposableMap
@@ -75,18 +76,21 @@ const NumberOfCases = () => {
       className="world-map"
     >
       <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-      <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
+      <Graticule stroke="#E4E5E6" strokeWidth={0.5}/>
       {data.length > 0 && (
         <ZoomableGroup zoom={1}>
         <Geographies geography={geoUrl}>
           {({ geographies }) => 
             geographies.map(geo => {
               const d = data.find(s => s.country === geo.properties.NAME || s.country === geo.properties.ISO_A3 || s.country === geo.properties.NAME_LONG || s.country === geo.properties.FORMAL_EN);
+              // debugger
               return (
                 <Geography
                   key={geo.rsmKey}
                   geography={geo}
+                  // change here depending on state
                   fill={d ? colorScale(d["cases"]) : "#F5F4F6"}
+                  // fill={d ? colorScale(d[props.currentMapButton]) : "#F5F4F6"}
                 />
               );
             })
@@ -99,4 +103,11 @@ const NumberOfCases = () => {
   );
 };
 
-export default NumberOfCases;
+const mapStateToProps = (state) => {
+  // debugger
+  return {
+    currentMapButton: state.currentMapButton.toLowerCase()
+  }
+}
+
+export default connect(mapStateToProps, null)(NumberOfCases);

@@ -26,4 +26,15 @@ function fetchedWorld(world){
     return {type: "FETCHED_WORLD", payload: world}
 }
 
-export { fetchingCountries, fetchingWorld }
+function clickingMapButton(event){
+    return (dispatch) => {
+        // debugger
+        dispatch(clickedMapButton(event))
+    }
+}
+
+function clickedMapButton(event){
+    return {type: "CLICKED_MAP_BUTTON", payload: event}
+}
+
+export { fetchingCountries, fetchingWorld, clickingMapButton }

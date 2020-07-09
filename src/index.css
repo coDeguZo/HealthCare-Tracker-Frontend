@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.title{
+  background-color: #1a1a1a;
+}
+
 .coronavirus-container{
   background-color: #1a1a1a;
 }
@@ -182,6 +186,6 @@ code {
   width: 80%
 }
 
-/* .map-chart-container-div {
-  background-color: #404040;
-} */
+.rsm-svg.world-map{
+  background-color: #00001a;
+}
