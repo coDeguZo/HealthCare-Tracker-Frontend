@@ -18,7 +18,7 @@ const worldReducer = (state = [], action) => {
     }
 }
 
-const mapButtonReducer = (state = "Cases", action) => {
+const mapButtonReducer = (state = "cases", action) => {
     switch(action.type){
         case "CLICKED_MAP_BUTTON":
             return action.payload.target.innerText

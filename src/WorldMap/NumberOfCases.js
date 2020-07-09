@@ -7,20 +7,35 @@ import {
   Geography,
   Sphere,
   Graticule,
-  ZoomableGroup
+  ZoomableGroup,
+  Annotation
 } from "react-simple-maps";
 import {connect} from 'react-redux'
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const colorScale = scaleLinear()
-  .domain([1, 15])
-  // .range(["#ffedea", "#ab0e03"])
-  .range(["#ffedea", "#DC143C "]);
-
-const NumberOfCases = () => {
+const NumberOfCases = (props) => {
   const [data, setData] = useState([]);
+
+  let colorScale
+
+  if (props.currentMapButton === "cases"){
+    colorScale = scaleLinear()
+      .domain([1, 15])
+      // .range(["#ffedea", "#ab0e03"])
+      .range(["#ffedea", "#9370DB"]);
+  }else if (props.currentMapButton === "deaths"){
+    colorScale = scaleLinear()
+      .domain([1, 11])
+        // .range(["#ffedea", "#ab0e03"])
+      .range(["#ffedea", "#DC143C"]);
+  }else if (props.currentMapButton === "recovered"){
+    colorScale = scaleLinear()
+      .domain([1, 15])
+        // .range(["#ffedea", "#ab0e03"])
+      .range(["#ffedea", "#009933"]);
+  }
 
    useEffect(() => {
     fetch("https://coronavirus-19-api.herokuapp.com/countries")
@@ -53,7 +68,12 @@ const NumberOfCases = () => {
           data[i].country = "Central African Rep."
         }
         data[i].cases = Math.log(data[i].cases)
+        data[i].deaths = Math.log(data[i].deaths)
+        data[i].recovered = Math.log(data[i].recovered)
       }
+      // cases orange
+      // deaths red
+      // recovered green
       // debugger
       // data[1].country = "United States of America"
       // data[8].country = "United Kingdom"
@@ -66,6 +86,9 @@ const NumberOfCases = () => {
 
       setData(data)})
   }, []);
+
+  // const mode = props.currentMapButton
+  // debugger
   return (
     <div className="map-chart-div">
     <ComposableMap
@@ -79,6 +102,20 @@ const NumberOfCases = () => {
       <Graticule stroke="#E4E5E6" strokeWidth={0.5}/>
       {data.length > 0 && (
         <ZoomableGroup zoom={1}>
+           {/* <Annotation
+          subject={[2.3522, 48.8566]}
+          dx={-90}
+          dy={-30}
+          connectorProps={{
+            stroke: "#FF5533",
+            strokeWidth: 3,
+            strokeLinecap: "round"
+          }}
+        >
+          <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
+            {"Paris"}
+          </text>
+          </Annotation> */}
         <Geographies geography={geoUrl}>
           {({ geographies }) => 
             geographies.map(geo => {
@@ -89,8 +126,8 @@ const NumberOfCases = () => {
                   key={geo.rsmKey}
                   geography={geo}
                   // change here depending on state
-                  fill={d ? colorScale(d["cases"]) : "#F5F4F6"}
-                  // fill={d ? colorScale(d[props.currentMapButton]) : "#F5F4F6"}
+                  // fill={d ? colorScale(d["cases"]) : "#F5F4F6"}
+                  fill={d ? colorScale(d[props.currentMapButton]) : "#F5F4F6"}
                 />
               );
             })
@@ -104,7 +141,6 @@ const NumberOfCases = () => {
 };
 
 const mapStateToProps = (state) => {
-  // debugger
   return {
     currentMapButton: state.currentMapButton.toLowerCase()
   }
