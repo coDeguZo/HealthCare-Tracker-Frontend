@@ -18,7 +18,8 @@ code {
 
 .app {
   display: flex;  
-
+  flex: 1;
+  /* flex-wrap: wrap; */
 
 }
 
@@ -26,10 +27,12 @@ code {
   background-color: #1a1a1a;
 }
 
-/* .topnav {
+/* Nav Bar Container Info */
+.topnav {
   overflow: hidden;
   background-color: #333;
   height: 100px;
+  /* padding-top: 1000px; */
 }
 
 .topnav a {
@@ -53,10 +56,10 @@ code {
 
 .topnav-right {
   float: right;
-} */
+}
 
 .ConfirmedCases-div {
-  /* margin-left: 15px; */
+  margin-left: 15px;
 }
 
 .left-country-container-div {
@@ -64,15 +67,16 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 500px;
-  /* width: 200px; */
+  width: 200px;
   border-style: groove;
   background-color: #404040;
+  /* border-color: #FFFFFF; */
 }
 
 .left-world-container { 
   text-align: center; 
-  /* height: 100px;
-  width: 200px; */
+  height: 100px;
+  width: 200px;
   border-style: groove;
   outline-color: #DCDCDC;
   background-color: #404040;
@@ -84,35 +88,37 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 500px;
-  /* width: 200px; */
-  width: 100%;
+  width: 200px;
   border-style: groove;
+  /* border-color: #FFFFFF; */
 }
 
 .country-data-div{
-  /* padding-top: 10px; */
+  /* margin-left:px; */
+  padding-top: 10px;
   background-color: #0e1a1f;
 }
 
 .country-container-div{
-  /* padding-left: 180px; */
+  padding-left: 180px;
   overflow-x: hidden; 
   overflow-y: auto; 
   text-align: center; 
-  /* height: 500px; */
+  height: 500px;
   width: 100%;
   border-style: groove;
 }
 
 .country-container-labels-div{
-  /* margin-top: 10px; */
+  /* padding-bottom: -40px; */
+  margin-top: 10px;
 }
 
 .date-time-left{
-  /* margin-left: 15px; */
+  margin-left: 15px;
   text-align: center; 
-  /* height: 100px;
-  width: 200px; */
+  height: 100px;
+  width: 200px;
   border-style: groove;
   outline-color: #DCDCDC;
   background-color: #404040;
@@ -121,16 +127,21 @@ code {
 .app-grid-container {
   display: inline-grid;
   grid-template-columns: auto auto auto auto;
+  /* background-color: #2196F3; */
+  /* padding: 10px; */
 }
 
 .grid-item {
   background-color: rgba(255, 255, 255, 0.8);
-  /* padding: 20px; */
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  padding: 20px;
+  /* font-size: 30px;  */
   text-align: center;
 }
 
 .world-map{
-  /* height: 600px; */
+  /* margin-right: 10px; */
+  height: 600px;
   text-align: center; 
   border-style: groove;
   outline-color: #DCDCDC;
@@ -141,32 +152,37 @@ code {
 }
 
 .grid-two{
-  /* margin-left: -50px; */
+  margin-left: -50px;
   display: flex;
 }
 
 .grid-three{
-  /* margin-left: 150px; */
+  margin-left: 150px;
   display: flex;
 }
 
 .grid-four{
-  /* margin-left: -70px; */
+  margin-left: -70px;
   display: flex;
 }
+
+/* .world-map-info {
+  margin-left: 15px;
+} */
 
 .world-map-info-container-div { 
   overflow-x: hidden; 
   overflow-y: auto; 
   text-align: center; 
-  /* height: 134px;
-  width: 798px; */
+  height: 134px;
+  width: 798px;
   border-style: groove;
   background-color: #404040
+  /* border-color: #FFFFFF; */
 }
 
 .grid-five{
-  /* margin-left: -282px; */
+  margin-left: -282px;
 }
 
 .inside-grid-five {
@@ -175,10 +191,9 @@ code {
   text-align: center; 
   height: 225px;
   width: 404px;
-  /* height: 40%;
-  width: 700%; */
   border-style: groove;
   background-color: #181818;
+  /* border-color: #FFFFFF; */
 }
 
 .ui.modal.transition.visible.active{

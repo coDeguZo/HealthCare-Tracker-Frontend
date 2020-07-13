@@ -33,7 +33,7 @@ class App extends React.Component {
 
           {/* Grid 1 Coronavirus Map by Countries */}
 
-          <Grid.Column width={3}>
+          <Grid.Column width={3} className="grid-one">
             <WorldContainer />
             <br />
             <CountryContainer />
@@ -61,14 +61,14 @@ class App extends React.Component {
               <DeathReportContainer />
           </Grid.Column>
 
-          <Grid.Column className="grid-four">
+          <Grid.Column width={3} className="grid-four">
               <RecoveryReportContainer />
           </Grid.Column>
 
           {/* Grid 5 */}
 
           <Grid.Column className="grid-five">
-            <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+            {/* <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> */}
             <div className="inside-grid-five">
               <GraphsContainer />
             </div>
