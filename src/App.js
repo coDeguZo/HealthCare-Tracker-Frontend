@@ -18,28 +18,73 @@ import MapChartButtons from './WorldMap/MapChartButtons'
 // class App extends React.Component {
 const App = () => {
   // render(){
-    const [toggleMobileVersion, setToggleMobileVersion] = useState(false)
+    const [mobileVersion, setToggleMobileVersion] = useState(false)
+    const [mobileView, setMobileView] = useState("Total Cases")
 
-    const toggle = () => {
-      setToggleMobileVersion(!toggleMobileVersion)
+    const toggleMobileVersion = () => setToggleMobileVersion(!mobileVersion)
+
+    const toggleMobileView = (event) => {
+      debugger
+      setMobileView(event.target.innerText)
     }
+//     <div className="some-container">
+    // {
+    //    (() => {
+    //        if (conditionOne)
+    //           return <span>One</span>
+    //        if (conditionTwo)
+    //           return <span>Two</span>
+    //        else (conditionOne)
+    //           return <span>Three</span>
+    //    })()
+    // }
+    // </div>
 
+    // this.state.route === 'projects'
+    // ? 
+    // <div> <Navigation onRouteChange={this.onRouteChange}/> Projects</div>
+    // :
+    // this.state.route === 'about'
+    // ?
+    // <div> <Navigation onRouteChange={this.onRouteChange}/> About</div>
+    // :
+    // this.state.route === 'contact'
+    // ?
+    // <div> <Navigation onRouteChange={this.onRouteChange}/> Contact</div>
+    // :
+    // <p> default </p>
+    
     return (
       <div className="App">
         {/* <Nav /> */}
         <div className="title">
           <br/>
           <div style={{textAlign: "right", marginTop: "500"}}>
-            {toggleMobileVersion === false ? 
-            <Button onClick={toggle}>Mobile Version</Button>
+            {mobileVersion === false ? 
+            <Button onClick={(event) => toggleMobileVersion(event)}>Mobile Version</Button>
             :
-            <Button onClick={toggle}>Desktop Version</Button>
+            <Button onClick={toggleMobileVersion}>Desktop Version</Button>
             }
           </div>
           <h1 style={{fontSize: "60px", textAlign: "center", color: "red"}}>Coronavirus Tracker</h1>
         </div>
         {/* <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/about" render={() => <About />}/> */}
+        {mobileVersion === true ? 
+        <div>
+          <WorldContainer />
+          <br />
+          <CountryContainer />
+          <br />
+          <TimeLastUpdated />
+          <br />
+          <Button onClick={toggleMobileView}>Total Cases</Button>
+          <Button>Recoveries & Deaths</Button>
+          <Button>Graph</Button>
+          <Button>Other</Button>
+          <br /><br />
+        </div>
+        : 
         <Route exact path="/" render={() => 
         <div className="coronavirus-container">
         <Grid>
@@ -92,6 +137,7 @@ const App = () => {
         <br />
         </div>
         }/>
+      }
         <Footer />
       </div>
     )
