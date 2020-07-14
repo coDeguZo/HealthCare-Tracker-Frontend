@@ -1,6 +1,6 @@
-import React from 'react' 
+import React, {useState} from 'react' 
 import {Route} from 'react-router-dom'
-import { Grid, Segment } from 'semantic-ui-react'
+import { Grid, Segment, Button } from 'semantic-ui-react'
 import Nav from './components/Nav'
 import Home from './components/Home'
 import About from './components/About'
@@ -15,14 +15,27 @@ import GraphsContainer from './Graphs/GraphsContainer'
 import CountriesDataContainer from './CountriesData/CountriesDataContainer'
 import MapChartButtons from './WorldMap/MapChartButtons'
 
-class App extends React.Component {
-  
-  render(){
+// class App extends React.Component {
+const App = () => {
+  // render(){
+    const [toggleMobileVersion, setToggleMobileVersion] = useState(false)
+
+    const toggle = () => {
+      setToggleMobileVersion(!toggleMobileVersion)
+    }
 
     return (
       <div className="App">
         {/* <Nav /> */}
         <div className="title">
+          <br/>
+          <div style={{textAlign: "right", marginTop: "500"}}>
+            {toggleMobileVersion === false ? 
+            <Button onClick={toggle}>Mobile Version</Button>
+            :
+            <Button onClick={toggle}>Desktop Version</Button>
+            }
+          </div>
           <h1 style={{fontSize: "60px", textAlign: "center", color: "red"}}>Coronavirus Tracker</h1>
         </div>
         {/* <Route exact path="/" render={() => <Home />}/>
@@ -82,7 +95,7 @@ class App extends React.Component {
         <Footer />
       </div>
     )
-  }
+  // }
 }
 
 export default App;

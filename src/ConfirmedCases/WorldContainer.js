@@ -1,7 +1,7 @@
 import React from 'react'
 import { fetchingWorld } from '../redux/actions'
 import {connect} from 'react-redux'
-import World from '../components/World'
+import World from './World'
 
 class WorldContainer extends React.Component {
 

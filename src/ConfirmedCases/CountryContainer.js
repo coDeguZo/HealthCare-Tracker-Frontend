@@ -1,8 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchingCountries} from '../redux/actions'
-import Country from '../components/Country'
-import World from '../components/World'
+import Country from './Country'
 
 class CountryContainer extends React.Component{
 
