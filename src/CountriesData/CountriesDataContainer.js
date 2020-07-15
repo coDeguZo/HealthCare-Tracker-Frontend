@@ -7,9 +7,9 @@ function CountriesDataContainer(props) {
 
     return !props.countries ? null : (
         <div>
-             <div className="country-data-div">
+             {/* <div className="country-data-div">
                 <div className="country-container-div">
-                    <div className="country-container-labels-div">
+                    <div className="country-container-labels-div"> */}
                         <Grid>
                             <Grid.Row>
                                 <Grid.Column width={2}>
@@ -38,16 +38,16 @@ function CountriesDataContainer(props) {
                                 </Grid.Column>
                             </Grid.Row>
                         </Grid>
-                    </div>
+                    {/* </div> */}
                     <Grid>
                         <Grid.Column>
                             {props.countries.map(country => {
-                                    return <CountryData key={country.country} country={country}/>
+                                return <CountryData key={country.country} country={country}/>
                             })}
                         </Grid.Column>
                     </Grid>
-                </div>
-            </div>
+                 {/* </div>
+             </div> */}
         </div>
     )
 }

@@ -18,41 +18,15 @@ import MapChartButtons from './WorldMap/MapChartButtons'
 // class App extends React.Component {
 const App = () => {
   // render(){
-    const [mobileVersion, setToggleMobileVersion] = useState(false)
-    const [mobileView, setMobileView] = useState("Total Cases")
+    const [mobileVersion, setToggleMobileVersion] = useState(true)
+    const [mobileView, setMobileView] = useState("Cases")
 
     const toggleMobileVersion = () => setToggleMobileVersion(!mobileVersion)
 
     const toggleMobileView = (event) => {
-      debugger
+      // debugger
       setMobileView(event.target.innerText)
     }
-//     <div className="some-container">
-    // {
-    //    (() => {
-    //        if (conditionOne)
-    //           return <span>One</span>
-    //        if (conditionTwo)
-    //           return <span>Two</span>
-    //        else (conditionOne)
-    //           return <span>Three</span>
-    //    })()
-    // }
-    // </div>
-
-    // this.state.route === 'projects'
-    // ? 
-    // <div> <Navigation onRouteChange={this.onRouteChange}/> Projects</div>
-    // :
-    // this.state.route === 'about'
-    // ?
-    // <div> <Navigation onRouteChange={this.onRouteChange}/> About</div>
-    // :
-    // this.state.route === 'contact'
-    // ?
-    // <div> <Navigation onRouteChange={this.onRouteChange}/> Contact</div>
-    // :
-    // <p> default </p>
     
     return (
       <div className="App">
@@ -60,32 +34,102 @@ const App = () => {
         <div className="title">
           <br/>
           <div style={{textAlign: "right", marginTop: "500"}}>
-            {mobileVersion === false ? 
+       
+            {/* <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+              ternary to change what shows below depending on whether using phone or desktop?
+              <a onClick={toggleMobileVersion}><li>Mobile</li></a>
+              <a onClick={toggleMobileVersion}><li>Desktop</li></a>
+            </ul>
+          </div>
+            </nav> */}
             <Button onClick={(event) => toggleMobileVersion(event)}>Mobile Version</Button>
-            :
+            
             <Button onClick={toggleMobileVersion}>Desktop Version</Button>
-            }
+            
           </div>
           <h1 style={{fontSize: "60px", textAlign: "center", color: "red"}}>Coronavirus Tracker</h1>
         </div>
         {/* <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/about" render={() => <About />}/> */}
-        {mobileVersion === true ? 
-        <div>
+        {mobileVersion === true && mobileView === "Cases" ? 
+        <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
           <WorldContainer />
-          <br />
+          {/* <br /> */}
           <CountryContainer />
-          <br />
-          <TimeLastUpdated />
-          <br />
-          <Button onClick={toggleMobileView}>Total Cases</Button>
-          <Button>Recoveries & Deaths</Button>
-          <Button>Graph</Button>
-          <Button>Other</Button>
-          <br /><br />
+          {/* <br /> */}
+          <div style={{marginTop: '-4px'}}>
+            <TimeLastUpdated />
+          </div>
         </div>
         : 
+        mobileVersion === true && mobileView === "Recoveries & Deaths" ? 
+        <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
+          <div className="mobile-grid-three">
+            <DeathReportContainer />
+          </div>
+          <div className="mobile-grid-four">
+            <RecoveryReportContainer />
+          </div>
+
+        </div>
+        : 
+        mobileVersion === true && mobileView === "Map" ? 
+        <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
+          <div className="mobile-map-div">
+            <MapChartContainer/>
+          </div>
+          <div className="mobile-map-buttons-div">
+            <MapChartButtons/>
+          </div>
+          <br />
+        </div>
+      : 
+      mobileVersion === true && mobileView === "Graph" ? 
+      <div>
+        <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
+          <GraphsContainer mobileVersion={mobileVersion}/>
+          <br /><br /><br /><br /><br />
+        </div>
+
+      </div>
+        : 
+        mobileVersion === true && mobileView === "Other" ? 
+        <div style={{backgroundColor: "#0e1a1f"}}>
+          <div className="mobile-countries-data-container-div">
+            <div className="country-data-div">
+              <div className="country-container-div">
+                <div className="country-container-labels-div">
+                  <CountriesDataContainer />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        :
+        null
+        }       
+        {mobileVersion === true ?   
+        // <div clasName="mobile-view-buttons-div"> 
+        <div className="mobile-coronavirus-container">
+          <div className="mobile-view-buttons-div">
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Cases</button>
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Recoveries & Deaths</button>
+            <br />
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Map</button>
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Graph</button>
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Other</button>
+            <br /><br />
+          </div>
+        </div>
+        : null}
         <Route exact path="/" render={() => 
+        mobileVersion === false ? 
         <div className="coronavirus-container">
         <Grid>
 
@@ -128,16 +172,23 @@ const App = () => {
           <Grid.Column className="grid-five">
             {/* <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> */}
             <div className="inside-grid-five">
-              <GraphsContainer />
+              <GraphsContainer mobileVersion={mobileVersion}/>
             </div>
           </Grid.Column>
           
         </Grid>
-        <CountriesDataContainer />
+        <div className="country-data-div">
+          <div className="country-container-div">
+            <div className="country-container-labels-div">
+              <CountriesDataContainer />
+              </div>
+            </div>
+          </div>
         <br />
         </div>
+        : null
         }/>
-      }
+      {/* } */}
         <Footer />
       </div>
     )

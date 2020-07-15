@@ -56,6 +56,7 @@ class Graph extends Component {
         }
     }
     drawChartJS(casesList, str, orderBy){
+        try{
         if(str == null)
         {
             str="";
@@ -202,6 +203,8 @@ class Graph extends Component {
           }
       });
       this.myChart.canvas.parentNode.style.height = '90vh';
+    }
+    catch{}
     }
     
       async changeLanguage(lang) {

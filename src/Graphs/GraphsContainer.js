@@ -18,16 +18,19 @@ function GraphsContainer(props) {
     //         setData(data)
     //     })
     // }, [])
-
+    // debugger
+    console.log(props.mobileVersion)
     return (
         <div>
             <br />
+            {props.mobileVersion === false ? 
             <Modal trigger={<Button>Click To Expand Graph</Button>} closeIcon>
                 <Modal.Content>
                 <Graph/>
                 <br /><br /><br /><br />
                 </Modal.Content>
             </Modal>
+            : null}
             <Graph/>
         </div>
     )
