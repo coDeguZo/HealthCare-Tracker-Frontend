@@ -163,7 +163,7 @@ code {
 }
 
 .country-data-div{
-  /* padding-top: 10px; */
+  padding-top: 10px;
   background-color: #0e1a1f;
 }
 
@@ -200,21 +200,25 @@ code {
 
 .grid-one{
   display: flex;
+  height: 800px;
 }
 
 .grid-two{
   margin-left: -50px;
   display: flex;
+  height: 800px;
 }
 
 .grid-three{
   /* margin-left: 150px; */
   display: flex;
+  height: 800px;
 }
 
 .grid-four{
   /* margin-left: -70px; */
   display: flex;
+  height: 800px;
 }
 
 .world-map{
@@ -238,6 +242,7 @@ code {
 .grid-five{
   margin-left: -370px;
   width: 20%;
+  height: 800px;
 }
 
 .inside-grid-five {
