@@ -273,17 +273,17 @@ code {
   float: left;
   width: 60%;
   position: relative;
-  margin-left: 17px;
+  margin-left: 37px;
   margin-top: 5px;
 }
 
 .mobile-deaths-container {
-  /* width: 50vw; */
+  width: 59vw;
   /* margin: auto; */
 }
 
 .mobile-recoveries-container {
-  /* width: 50vw; */
+  width: 59vw;
   /* margin: auto; */
 }
 

@@ -84,20 +84,20 @@ const App = () => {
         : 
         mobileVersion === true && mobileView === "Recoveries & Deaths" ? 
         <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
-            {/* <div className="mobile-deaths-container"> */}
             <Grid>
           <div className="mobile-grid-three">
-              <Grid.Column width={6}>
+            <div className="mobile-deaths-container">
+              <Grid.Column width={4}>
                 <DeathReportContainer />
               </Grid.Column>
+            </div>
           </div>
-            {/* </div> */}
           <div className="mobile-grid-four">
-            {/* <div className="mobile-recoveries-container"> */}
+            <div className="mobile-recoveries-container">
               <Grid.Column width={6}>
                 <RecoveryReportContainer />
               </Grid.Column>
-            {/* </div> */}
+            </div>
           </div>
             </Grid>
         </div>
