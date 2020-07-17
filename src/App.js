@@ -84,17 +84,22 @@ const App = () => {
         : 
         mobileVersion === true && mobileView === "Recoveries & Deaths" ? 
         <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
+            {/* <div className="mobile-deaths-container"> */}
+            <Grid>
           <div className="mobile-grid-three">
-            <div className="mobile-deaths-container">
-              <DeathReportContainer />
-            </div>
+              <Grid.Column width={6}>
+                <DeathReportContainer />
+              </Grid.Column>
           </div>
+            {/* </div> */}
           <div className="mobile-grid-four">
-            <div className="mobile-recoveries-container">
-              <RecoveryReportContainer />
-            </div>
+            {/* <div className="mobile-recoveries-container"> */}
+              <Grid.Column width={6}>
+                <RecoveryReportContainer />
+              </Grid.Column>
+            {/* </div> */}
           </div>
-
+            </Grid>
         </div>
         : 
         mobileVersion === true && mobileView === "Map" ? 
@@ -170,6 +175,7 @@ const App = () => {
             <div className="desktop-deaths-recoveries-container">
               <div className="desktop-deaths-container">
                 <DeathReportContainer />
+                <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
               </div>
             </div>
           </Grid.Column>
@@ -178,6 +184,7 @@ const App = () => {
             <div className="desktop-deaths-recoveries-container">
               <div className="desktop-recoveries-container">
                 <RecoveryReportContainer />
+                <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
               </div>
             </div>
           </Grid.Column>
