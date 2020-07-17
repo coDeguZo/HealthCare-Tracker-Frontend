@@ -188,6 +188,30 @@ code {
   z-index: 3;
 }
 
+.mobile-left-world-container {
+  text-align: center; 
+
+  word-wrap: break-word;
+
+  width: 100%;
+  width: 335px;
+  min-width: 100px;
+  
+  border-style: groove;
+  outline-color: #DCDCDC;
+  background-color: #404040;
+}
+
+.mobile-date-time-left {
+    /* margin-left: 15px; */
+    text-align: center; 
+    height: 115px;
+    width: 335px;
+    border-style: groove;
+    outline-color: #DCDCDC;
+    background-color: #404040;
+}
+
 .grid-three{
   margin-left: 205px;
   display: flex;
@@ -223,7 +247,7 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 134px;
-  width: 785px;
+  width: 830px;
   border-style: groove;
   background-color: #404040
 }

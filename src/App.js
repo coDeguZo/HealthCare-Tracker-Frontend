@@ -18,8 +18,8 @@ import MapChartButtons from './WorldMap/MapChartButtons'
 // class App extends React.Component {
 const App = () => {
   // render(){
-    const [mobileVersion, setToggleMobileVersion] = useState(false)
-    const [mobileView, setMobileView] = useState("Recoveries & Deaths")
+    const [mobileVersion, setToggleMobileVersion] = useState(true)
+    const [mobileView, setMobileView] = useState("Cases")
 
     const toggleMobileVersion = () => setToggleMobileVersion(!mobileVersion)
 
@@ -76,12 +76,16 @@ const App = () => {
         <Route exact path="/about" render={() => <About />}/> */}
         {mobileVersion === true && mobileView === "Cases" ? 
         <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
-          <WorldContainer />
+          <div className="mobile-left-world-container">
+            <WorldContainer />
+          </div>
           {/* <br /> */}
           <CountryContainer />
           {/* <br /> */}
           <div style={{marginTop: '-4px'}}>
-            <TimeLastUpdated />
+            <div className="mobile-date-time-left">
+              <TimeLastUpdated />
+            </div>
           </div>
         </div>
         : 
@@ -150,11 +154,15 @@ const App = () => {
 
           <Grid.Column width={3} className="grid-one">
             <div className="desktop-confirmed-cases-and-time-div">
-              <WorldContainer />
+              <div className="left-world-container">
+                <WorldContainer />
+              </div>
               <br />
               <CountryContainer />
               <br />
-              <TimeLastUpdated />
+              <div className="date-time-left">
+                <TimeLastUpdated />
+              </div>
             </div>
           </Grid.Column>
 

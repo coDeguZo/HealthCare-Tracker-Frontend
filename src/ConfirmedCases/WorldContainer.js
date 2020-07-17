@@ -12,7 +12,8 @@ class WorldContainer extends React.Component {
     render(){
         return(
             <div className="ConfirmedCases-div">
-                <div className="left-world-container" >
+                {/* <div className="left-world-container"> */}
+                <div>
                     <World key={this.props.world} world={this.props.world}/>
                 </div>
             </div>
