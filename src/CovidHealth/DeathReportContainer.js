@@ -20,8 +20,8 @@ class DeathReportContainer extends React.Component {
                         null
                         :
                         <div>
-                            <Deaths key={country.country} country={country} />
-                            <hr></hr>
+                        <Deaths key={country.country} country={country} />
+                        <hr></hr>
                         </div>
                     })}
                 </div>
