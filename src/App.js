@@ -18,7 +18,7 @@ import MapChartButtons from './WorldMap/MapChartButtons'
 // class App extends React.Component {
 const App = () => {
   // render(){
-    const [mobileVersion, setToggleMobileVersion] = useState(true)
+    const [mobileVersion, setToggleMobileVersion] = useState(false)
     const [mobileView, setMobileView] = useState("Cases")
 
     const toggleMobileVersion = () => setToggleMobileVersion(!mobileVersion)
