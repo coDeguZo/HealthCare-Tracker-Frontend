@@ -18,8 +18,8 @@ import MapChartButtons from './WorldMap/MapChartButtons'
 // class App extends React.Component {
 const App = () => {
   // render(){
-    const [mobileVersion, setToggleMobileVersion] = useState(false)
-    const [mobileView, setMobileView] = useState("Cases")
+    const [mobileVersion, setToggleMobileVersion] = useState(true)
+    const [mobileView, setMobileView] = useState("Recoveries & Deaths")
 
     const toggleMobileVersion = () => setToggleMobileVersion(!mobileVersion)
 
@@ -60,7 +60,7 @@ const App = () => {
         <div className="mobile-coronavirus-container">
           <div className="mobile-view-buttons-div">
             <button className="mobile-view-individual-button" onClick={toggleMobileView}>Cases</button>
-            {/* <button className="mobile-view-individual-button" onClick={toggleMobileView}>Recoveries & Deaths</button> */}
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Recoveries & Deaths</button>
             <br />
             <button className="mobile-view-individual-button" onClick={toggleMobileView}>Map</button>
             <button className="mobile-view-individual-button" onClick={toggleMobileView}>Graph</button>
