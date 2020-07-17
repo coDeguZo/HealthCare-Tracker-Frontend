@@ -75,7 +75,7 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 500px;
-  /* width: 200px; */
+  width: 200px;
   min-width: 85px;
   border-style: groove;
   background-color: #404040;
@@ -97,7 +97,7 @@ code {
   word-wrap: break-word;
 
   width: 100%;
-  /* width: 200px; */
+  width: 200px;
   min-width: 100px;
 
   border-style: groove;
@@ -140,24 +140,6 @@ code {
   }
 }
 
-.desktop-confirmed-cases-and-time-div {
-  /* width: 200px; */
-}
-
-.desktop-deaths-recoveries-container{
-  /* width: 200px;
-  display: flex; */
-}
-
-.desktop-deaths-container{
-  /* display: flex; */
-  /* margin-left: 100px; */
-}
-
-.desktop-recoveries-container{
-  /* display: flex; */
-}
-
 .country-data-div{
   padding-top: 10px;
   background-color: #0e1a1f;
@@ -177,7 +159,7 @@ code {
   /* margin-left: 15px; */
   text-align: center; 
   height: 115px;
-  /* width: 200px; */
+  width: 200px;
   border-style: groove;
   outline-color: #DCDCDC;
   background-color: #404040;
@@ -200,26 +182,37 @@ code {
 }
 
 .grid-two{
-  margin-left: -50px;
+  margin-left: -70px;
   display: flex;
   height: 800px;
+  z-index: 3;
 }
 
 .grid-three{
-  /* margin-left: 150px; */
+  margin-left: 205px;
   display: flex;
   height: 800px;
+  z-index: 2;
 }
 
 .grid-four{
-  /* margin-left: -70px; */
+  margin-left: 0px;
   display: flex;
   height: 800px;
+  z-index: 1;
 }
+
+/* experimental */
+/* .map-column{
+  margin-top: 14px;
+  margin-left: -70px;
+  width: 800px;
+} */
+/* experimental */
 
 .world-map{
   height: 600px;
-  width: 790px;
+  width: 830px;
   text-align: center; 
   border-style: groove;
   outline-color: #DCDCDC;
@@ -230,7 +223,7 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 134px;
-  width: 790px;
+  width: 785px;
   border-style: groove;
   background-color: #404040
 }
@@ -481,15 +474,4 @@ code {
   color: rgb(211, 211, 211);
   height: 200%;
   background-color: #1a1a1a;
-}
-
-.footer {
-  /* padding-bottom: -2000px; */
-}
-
-@media (max-width: 520px) {
-  .left-country-container-div {
-    /* flex-direction: column;
-    background-color: red; */
-  }
 }

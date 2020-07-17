@@ -160,7 +160,8 @@ const App = () => {
 
           {/* Grid 2 World Map */}
 
-          <Grid.Column width={7} className="grid-two">
+          <Grid.Column width={5} className="grid-two">
+          {/* <div className="map-column"> */}
           <div className="map-chart-container-div">
             <MapChartContainer />
           </div>
@@ -169,7 +170,8 @@ const App = () => {
               {/* <h1>World Map Information will go here!</h1> */}
               <MapChartButtons />
             </div>
-            </div>
+          </div>
+          {/* </div> */}
           </Grid.Column>
 
           {/* Grid 3 & 4 Recovered / Deaths */}
