@@ -48,13 +48,13 @@ const App = () => {
             </ul>
           </div>
             </nav> */}
-            <div style={{marginBottom: "-70px"}}>
+            {/* <div style={{marginBottom: "-70px"}}> */}
               {mobileVersion ? 
               <Button onClick={(event) => toggleMobileVersion(event)}>Desktop Version</Button>
               :
               <Button onClick={toggleMobileVersion}>Mobile Version</Button>
               }
-            </div>
+            {/* </div> */}
         </div>
           <h1 style={{fontSize: "60px", textAlign: "center", color: "red"}}>Coronavirus Tracker</h1>
         </div>

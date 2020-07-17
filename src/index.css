@@ -105,8 +105,6 @@ code {
   background-color: #404040;
 }
 
-
-
 .right-country-container-div { 
   background-color: #404040;
   overflow-x: hidden; 
@@ -143,7 +141,7 @@ code {
 }
 
 .desktop-confirmed-cases-and-time-div {
-  width: 200px;
+  /* width: 200px; */
 }
 
 .desktop-deaths-recoveries-container{
@@ -153,13 +151,11 @@ code {
 
 .desktop-deaths-container{
   /* display: flex; */
-
+  /* margin-left: 100px; */
 }
 
 .desktop-recoveries-container{
   /* display: flex; */
-  
-
 }
 
 .country-data-div{
