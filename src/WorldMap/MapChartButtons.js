@@ -5,7 +5,7 @@ import {clickingMapButton} from '../redux/actions'
 
 const MapChartButtons = (props) => {
     return (
-        <div>
+        <div className="map-buttons-container" >
             {/* <h1 style={{color: "white"}}>Change Map Above To Reflect Button</h1> */}
             <br />
             <Button style={{marginRight: "20px"}} onClick={(event) => props.clickingMapButton(event)}>Cases</Button>

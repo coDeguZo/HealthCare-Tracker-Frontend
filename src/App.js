@@ -18,7 +18,7 @@ import MapChartButtons from './WorldMap/MapChartButtons'
 // class App extends React.Component {
 const App = () => {
   // render(){
-    const [mobileVersion, setToggleMobileVersion] = useState(true)
+    const [mobileVersion, setToggleMobileVersion] = useState(false)
     const [mobileView, setMobileView] = useState("Cases")
 
     const toggleMobileVersion = () => setToggleMobileVersion(!mobileVersion)
@@ -55,6 +55,20 @@ const App = () => {
           </div>
           <h1 style={{fontSize: "60px", textAlign: "center", color: "red"}}>Coronavirus Tracker</h1>
         </div>
+        {mobileVersion === true ?   
+        // <div clasName="mobile-view-buttons-div"> 
+        <div className="mobile-coronavirus-container">
+          <div className="mobile-view-buttons-div">
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Cases</button>
+            {/* <button className="mobile-view-individual-button" onClick={toggleMobileView}>Recoveries & Deaths</button> */}
+            <br />
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Map</button>
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Graph</button>
+            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Other</button>
+            <br /><br />
+          </div>
+        </div>
+        : null}
         {/* <Route exact path="/" render={() => <Home />}/>
         <Route exact path="/about" render={() => <About />}/> */}
         {mobileVersion === true && mobileView === "Cases" ? 
@@ -71,10 +85,14 @@ const App = () => {
         mobileVersion === true && mobileView === "Recoveries & Deaths" ? 
         <div style={{padding: "20px", backgroundColor: "#0e1a1f"}}>
           <div className="mobile-grid-three">
-            <DeathReportContainer />
+            <div className="mobile-deaths-container">
+              <DeathReportContainer />
+            </div>
           </div>
           <div className="mobile-grid-four">
-            <RecoveryReportContainer />
+            <div className="mobile-recoveries-container">
+              <RecoveryReportContainer />
+            </div>
           </div>
 
         </div>
@@ -85,6 +103,7 @@ const App = () => {
             <MapChartContainer/>
           </div>
           <div className="mobile-map-buttons-div">
+            <br /><br /><br /><br />
             <MapChartButtons/>
           </div>
           <br />
@@ -114,20 +133,6 @@ const App = () => {
         :
         null
         }       
-        {mobileVersion === true ?   
-        // <div clasName="mobile-view-buttons-div"> 
-        <div className="mobile-coronavirus-container">
-          <div className="mobile-view-buttons-div">
-            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Cases</button>
-            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Recoveries & Deaths</button>
-            <br />
-            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Map</button>
-            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Graph</button>
-            <button className="mobile-view-individual-button" onClick={toggleMobileView}>Other</button>
-            <br /><br />
-          </div>
-        </div>
-        : null}
         <Route exact path="/" render={() => 
         mobileVersion === false ? 
         <div className="coronavirus-container">
@@ -136,11 +141,13 @@ const App = () => {
           {/* Grid 1 Coronavirus Map by Countries */}
 
           <Grid.Column width={3} className="grid-one">
-            <WorldContainer />
-            <br />
-            <CountryContainer />
-            <br />
-            <TimeLastUpdated />
+            <div className="desktop-confirmed-cases-and-time-div">
+              <WorldContainer />
+              <br />
+              <CountryContainer />
+              <br />
+              <TimeLastUpdated />
+            </div>
           </Grid.Column>
 
           {/* Grid 2 World Map */}
@@ -160,23 +167,32 @@ const App = () => {
           {/* Grid 3 & 4 Recovered / Deaths */}
 
           <Grid.Column width={3} className="grid-three">
-              <DeathReportContainer />
+            <div className="desktop-deaths-recoveries-container">
+              <div className="desktop-deaths-container">
+                <DeathReportContainer />
+              </div>
+            </div>
           </Grid.Column>
 
           <Grid.Column width={3} className="grid-four">
-              <RecoveryReportContainer />
+            <div className="desktop-deaths-recoveries-container">
+              <div className="desktop-recoveries-container">
+                <RecoveryReportContainer />
+              </div>
+            </div>
           </Grid.Column>
 
           {/* Grid 5 */}
 
           <Grid.Column className="grid-five">
-            {/* <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> */}
+            <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
             <div className="inside-grid-five">
               <GraphsContainer mobileVersion={mobileVersion}/>
             </div>
           </Grid.Column>
-          
+
         </Grid>
+        <br />
         <div className="country-data-div">
           <div className="country-container-div">
             <div className="country-container-labels-div">

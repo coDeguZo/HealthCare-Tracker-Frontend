@@ -13,7 +13,7 @@ class DeathReportContainer extends React.Component {
     render(){
     return (
         <div className="ConfirmedCases-div">
-                <div className="right-country-container-div">
+                <div className="right-country-container-div deaths">
                     <h4 style={{color: "white"}}>Global Deaths</h4>
                     {this.props.countries.map(country => {
                     return country.country === "World" ?

@@ -21,7 +21,7 @@ function GraphsContainer(props) {
     // debugger
     console.log(props.mobileVersion)
     return (
-        <div>
+        <div className="desktop-graph" >
             <br />
             {props.mobileVersion === false ? 
             <Modal trigger={<Button>Click To Expand Graph</Button>} closeIcon>

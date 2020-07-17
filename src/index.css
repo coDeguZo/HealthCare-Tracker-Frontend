@@ -75,10 +75,10 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 500px;
+  /* width: 200px; */
   min-width: 85px;
   border-style: groove;
   background-color: #404040;
-
   word-wrap: break-word;
 
 }
@@ -97,6 +97,7 @@ code {
   word-wrap: break-word;
 
   width: 100%;
+  /* width: 200px; */
   min-width: 100px;
 
   border-style: groove;
@@ -104,16 +105,24 @@ code {
   background-color: #404040;
 }
 
+
+
 .right-country-container-div { 
   background-color: #404040;
   overflow-x: hidden; 
   overflow-y: auto; 
   text-align: center; 
   height: 500px;
-  /* width: 200px; */
-  width: 100%;
+  /* width: 150px; */
+  width: 80%;
+  margin-left: 97px;
   border-style: groove;
 }
+
+.deaths {
+  margin-left: 170px;
+}
+
 
 @media (max-width: 768px) and (min-width: 768px) {
   .right-country-container-div {
@@ -133,6 +142,26 @@ code {
   }
 }
 
+.desktop-confirmed-cases-and-time-div {
+  width: 200px;
+}
+
+.desktop-deaths-recoveries-container{
+  /* width: 200px;
+  display: flex; */
+}
+
+.desktop-deaths-container{
+  /* display: flex; */
+
+}
+
+.desktop-recoveries-container{
+  /* display: flex; */
+  
+
+}
+
 .country-data-div{
   /* padding-top: 10px; */
   background-color: #0e1a1f;
@@ -143,7 +172,7 @@ code {
   overflow-x: hidden; 
   overflow-y: auto; 
   text-align: center; 
-  /* height: 500px; */
+  height: 500px;
   width: 100%;
   border-style: groove;
 }
@@ -151,8 +180,8 @@ code {
 .date-time-left{
   /* margin-left: 15px; */
   text-align: center; 
-  /* height: 100px;
-  width: 200px; */
+  height: 115px;
+  /* width: 200px; */
   border-style: groove;
   outline-color: #DCDCDC;
   background-color: #404040;
@@ -169,19 +198,12 @@ code {
   text-align: center;
 }
 
-.world-map{
-  /* height: 600px; */
-  text-align: center; 
-  border-style: groove;
-  outline-color: #DCDCDC;
-}
-
 .grid-one{
   display: flex;
 }
 
 .grid-two{
-  /* margin-left: -50px; */
+  margin-left: -50px;
   display: flex;
 }
 
@@ -195,14 +217,27 @@ code {
   display: flex;
 }
 
+.world-map{
+  height: 600px;
+  width: 790px;
+  text-align: center; 
+  border-style: groove;
+  outline-color: #DCDCDC;
+}
+
 .world-map-info-container-div { 
   overflow-x: hidden; 
   overflow-y: auto; 
   text-align: center; 
-  /* height: 134px;
-  width: 798px; */
+  height: 134px;
+  width: 790px;
   border-style: groove;
   background-color: #404040
+}
+
+.grid-five{
+  margin-left: -370px;
+  width: 20%;
 }
 
 .inside-grid-five {
@@ -210,9 +245,10 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 225px;
-  width: 404px;
+  width: 400px;
   /* height: 40%;
   width: 700%; */
+  margin-left: -10px;
   border-style: groove;
   background-color: #181818;
 }
@@ -227,27 +263,41 @@ code {
 
 .mobile-grid-three {
   float: left;
-  width: 50%;
-  /* height: 500px; */
-  /* position: absolute; */
+  /* width: 50%; */
+  height: 500px;
+  position: relative;
   /* padding: 10px; */
 }
 
 .mobile-grid-four {
   float: left;
-  width: 50%;
-  /* height: 500px; */
-  /* position: absolute; */
+  /* width: 50%; */
+  height: 500px;
+  position: relative;
   /* padding: 10px; */
+}
+
+.mobile-deaths-container {
+  /* width: 50vw; */
+  margin: auto;
+
+}
+
+.mobile-recoveries-container {
+  margin: auto;
+  /* width: 50vw; */
 }
 
 .mobile-map-div {
   width: 100%;
+  text-align: center;
+  overflow: auto;
 }
 
 .mobile-map-buttons-div {
   text-align: center;
   margin-top: -70px;
+  z-index: 1;
 }
 
 .mobile-countries-data-container-div {
