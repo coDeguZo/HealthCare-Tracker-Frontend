@@ -151,7 +151,7 @@ code {
   overflow-y: auto; 
   text-align: center; 
   height: 500px;
-  width: 150%;
+  width: 100%;
   border-style: groove;
 }
 
